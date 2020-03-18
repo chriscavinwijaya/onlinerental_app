@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "351573215370",
+    "firebase_url": "https://fashion-rental-e82af.firebaseio.com",
+    "project_id": "fashion-rental-e82af",
+    "storage_bucket": "fashion-rental-e82af.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:351573215370:android:d2f98260a12310f902c573",
+        "android_client_info": {
+          "package_name": "com.example.onlinerentalapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "351573215370-5mb7f7sce4hvvaarui4chna26hoduulu.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.onlinerentalapp",
+            "certificate_hash": "bd9a701553e45725b25004ff2787cd9aadf71112"
+          }
+        },
+        {
+          "client_id": "351573215370-v1d5vivmenoc3tvpdgnkt8h75t1kasg3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBezqPTU-DhYgeMaZ8FT54lQFZSHq9qFI0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "351573215370-v1d5vivmenoc3tvpdgnkt8h75t1kasg3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
