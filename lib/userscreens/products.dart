@@ -31,7 +31,7 @@ class _ProductsState extends State<Products> {
     },
     {
       "name": "Leather Shoes",
-      "picture": "images/manshoes.png",
+      "picture": "images/menshoes.png",
       "price": "5/day",
     },
     {
