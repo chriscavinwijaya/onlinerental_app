@@ -32,7 +32,7 @@ class _ProductDetailState extends State<ProductDetail> {
       body: new ListView(
         children: <Widget>[
           new Container(
-            height: 300.0,
+            height: 290.0,
             child: GridTile(
               child: Container(
                 color: Colors.white60,

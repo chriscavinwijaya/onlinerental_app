@@ -1,5 +1,7 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:onlinerentalapp/userscreens/Auth.dart';
 import 'search.dart';
 import 'messages.dart';
 import 'login.dart';
@@ -18,10 +20,24 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  BuildContext context;
+  final AuthService _auth = AuthService();
+  final FirebaseAuth _auth1 = FirebaseAuth.instance;
+  FirebaseUser user;
+
+  @override
+  void initState() {
+    super.initState();
+    initUser();
+  }
+
+  initUser() async {
+    user = await _auth1.currentUser();
+    setState(() {});
+  }
+
   @override
   Widget build(BuildContext context) {
-    Widget image_carousel = new Container(
+    Widget imageCarousel = new Container(
       height: 200.0,
       child: new Carousel(
         boxFit: BoxFit.fitHeight,
@@ -32,14 +48,13 @@ class _MyHomePageState extends State<MyHomePage> {
           AssetImage('images/stageclothespose.jpg'),
           AssetImage('images/guitar.jpg'),
         ],
-        autoplay: false,
+        autoplay: true,
 //      animationCurve: Curves.fastOutSlowIn,
 //      animationDuration: Duration(milliseconds: 1000),
         dotSize: 4.0,
         indicatorBgPadding: 2.0,
       ),
     );
-    this.context = context;
     return new Scaffold(
       appBar: new AppBar(
         title: new Text("FasHits Online Rental"),
@@ -82,36 +97,38 @@ class _MyHomePageState extends State<MyHomePage> {
           )
         ],
       ),
-      body: new Column(
-        children: <Widget>[
-          image_carousel,
-          new Padding(
-            padding: const EdgeInsets.all(6.0),
-            child: Container(
+      body: SingleChildScrollView(
+        child: new Column(
+          children: <Widget>[
+            imageCarousel,
+            new Padding(
+              padding: const EdgeInsets.all(6.0),
+              child: Container(
+                  alignment: Alignment.centerLeft,
+                  child: new Text(
+                    'Categories',
+                    style: new TextStyle(
+                        fontSize: 16.0, fontWeight: FontWeight.bold),
+                  )),
+            ),
+            Categories(),
+            new Padding(
+              padding: const EdgeInsets.all(6.0),
+              child: Container(
                 alignment: Alignment.centerLeft,
                 child: new Text(
-                  'Categories',
+                  'Recent products',
                   style: new TextStyle(
                       fontSize: 16.0, fontWeight: FontWeight.bold),
-                )),
-          ),
-          Categories(),
-          new Padding(
-            padding: const EdgeInsets.all(6.0),
-            child: Container(
-              alignment: Alignment.centerLeft,
-              child: new Text(
-                'Recent products',
-                style:
-                    new TextStyle(fontSize: 16.0, fontWeight: FontWeight.bold),
+                ),
               ),
             ),
-          ),
-          Container(
-            height: 320.0,
-            child: Products(),
-          )
-        ],
+            Container(
+              height: 320.0,
+              child: Products(),
+            )
+          ],
+        ),
       ),
 
       // Floating Camera Button
