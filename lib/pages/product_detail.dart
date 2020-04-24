@@ -19,8 +19,9 @@ class _ProductDetailState extends State<ProductDetail> {
   Widget build(BuildContext context) {
     return new Scaffold(
       appBar: new AppBar(
-          title: new Text("FasHits Online Rental"),
-          centerTitle: true,
+          backgroundColor: Colors.greenAccent,
+          title: new Text("Sf"),
+          centerTitle: false,
           actions: <Widget>[
             new IconButton(
                 icon: Icon(
@@ -149,7 +150,7 @@ class _ProductDetailState extends State<ProductDetail> {
                 child: MaterialButton(
                   height: 50,
                   onPressed: () {},
-                  color: Colors.blue,
+                  color: Colors.green,
                   textColor: Colors.white,
                   child: new Text(
                     "Chat Now",
@@ -159,8 +160,10 @@ class _ProductDetailState extends State<ProductDetail> {
               ),
 
               new IconButton(
-                icon: Icon(Icons.favorite_border),
-                color: Colors.red,
+                icon: Icon(
+                  Icons.favorite_border,
+                  color: Colors.redAccent,
+                ),
                 onPressed: null,
               ),
             ],

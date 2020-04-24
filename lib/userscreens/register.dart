@@ -141,7 +141,7 @@ class _RegisterState extends State<Register> {
                               color: Colors.white,
                               child: ListTile(
                                 title: Text(
-                                  " Register",
+                                  "Register",
                                   style: TextStyle(
                                       color: Colors.greenAccent,
                                       fontSize: 25,
@@ -153,7 +153,7 @@ class _RegisterState extends State<Register> {
                                 if (_formKey.currentState.validate()) {
                                   setState(() => loading = true);
                                   dynamic result =
-                                      await _auth.signInWithEmailAndPassword(
+                                      await _auth.registerWithEmailAndPassword(
                                           email, password);
                                   if (result == null) {
                                     setState(

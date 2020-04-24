@@ -53,12 +53,14 @@ class _MyHomePageState extends State<MyHomePage> {
 //      animationDuration: Duration(milliseconds: 1000),
         dotSize: 4.0,
         indicatorBgPadding: 2.0,
+        dotBgColor: Colors.white30,
       ),
     );
     return new Scaffold(
       appBar: new AppBar(
-        title: new Text("FasHits Online Rental"),
-        centerTitle: true,
+        backgroundColor: Colors.greenAccent,
+        title: new Text("Sustainable Fashion"),
+        centerTitle: false,
         actions: <Widget>[
           new IconButton(
               icon: new Icon(
@@ -87,7 +89,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   }),
               new CircleAvatar(
                 radius: 8.0,
-                backgroundColor: Colors.red,
+                backgroundColor: Colors.redAccent,
                 child: new Text(
                   "0",
                   style: new TextStyle(color: Colors.white, fontSize: 12.0),
@@ -147,6 +149,7 @@ class _MyHomePageState extends State<MyHomePage> {
       floatingActionButton: FloatingActionButton(
         child: Icon(Icons.add_a_photo),
         onPressed: null,
+        backgroundColor: Colors.greenAccent,
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
       //
@@ -159,11 +162,15 @@ class _MyHomePageState extends State<MyHomePage> {
               accountEmail: new Text("Kevin@gmail.com"),
               currentAccountPicture: new CircleAvatar(
                 backgroundColor: Colors.white,
-                child: new Icon(Icons.person),
+                child: new Icon(
+                  Icons.person,
+                  color: Colors.greenAccent,
+                ),
               ),
             ),
             new ListTile(
               leading: new CircleAvatar(
+                backgroundColor: Colors.greenAccent,
                 child: new Icon(
                   Icons.person,
                   color: Colors.white,
@@ -178,6 +185,7 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             new ListTile(
               leading: new CircleAvatar(
+                backgroundColor: Colors.greenAccent,
                 child: new Icon(
                   Icons.notifications,
                   color: Colors.white,
@@ -192,6 +200,7 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             new ListTile(
               leading: new CircleAvatar(
+                backgroundColor: Colors.greenAccent,
                 child: new Icon(
                   Icons.history,
                   color: Colors.white,
@@ -207,6 +216,7 @@ class _MyHomePageState extends State<MyHomePage> {
             new Divider(),
             new ListTile(
               leading: new CircleAvatar(
+                backgroundColor: Colors.greenAccent,
                 child: new Icon(
                   Icons.settings,
                   color: Colors.white,
@@ -221,6 +231,7 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             new ListTile(
               leading: new CircleAvatar(
+                backgroundColor: Colors.greenAccent,
                 child: new Icon(
                   Icons.help,
                   color: Colors.white,
@@ -235,6 +246,7 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             new ListTile(
               leading: new CircleAvatar(
+                backgroundColor: Colors.greenAccent,
                 child: new Icon(
                   Icons.exit_to_app,
                   color: Colors.white,

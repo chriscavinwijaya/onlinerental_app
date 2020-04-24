@@ -51,6 +51,7 @@ class _SignInState extends State<SignIn> {
             backgroundColor: Colors.white,
             body: Stack(
               children: <Widget>[
+//Background Wave Container
                 Container(
                   height: 700,
                   child: RotatedBox(
@@ -75,6 +76,8 @@ class _SignInState extends State<SignIn> {
                     ),
                   ),
                 ),
+
+//Container
                 Container(
                   padding:
                       EdgeInsets.symmetric(vertical: 35.0, horizontal: 35.0),
@@ -102,7 +105,9 @@ class _SignInState extends State<SignIn> {
                           Container(
                             height: 5.0,
                           ),
-//                          imageCarousel,
+//imageCarousel,
+
+                          //Email
                           SizedBox(height: 20),
                           TextFormField(
                             decoration:
@@ -113,6 +118,8 @@ class _SignInState extends State<SignIn> {
                               setState(() => email = val);
                             },
                           ),
+
+                          //Password
                           SizedBox(
                             height: 20,
                           ),
@@ -165,6 +172,9 @@ class _SignInState extends State<SignIn> {
                                         loading = false;
                                       },
                                     );
+                                  } else {
+                                    print('Signed In');
+                                    print(result);
                                   }
                                 }
                               },
