@@ -12,10 +12,10 @@ class _MySearchState extends State<MySearch> {
         appBar: new AppBar(
           title: new Text("Search"),
           centerTitle: false,
+          backgroundColor: Colors.greenAccent,
         ),
         body: new Center(
           child: new Text("Search"),
-        )
-    );
+        ));
   }
 }

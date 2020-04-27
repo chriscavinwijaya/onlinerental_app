@@ -46,7 +46,6 @@ class _MyHomePageState extends State<MyHomePage> {
           AssetImage('images/femaleformalpose.jpg'),
           AssetImage('images/dresspose.jpg'),
           AssetImage('images/stageclothespose.jpg'),
-          AssetImage('images/guitar.jpg'),
         ],
         autoplay: true,
 //      animationCurve: Curves.fastOutSlowIn,
@@ -73,29 +72,31 @@ class _MyHomePageState extends State<MyHomePage> {
                   return new MySearch();
                 }));
               }),
-          new Stack(
-            alignment: Alignment.topLeft,
-            children: <Widget>[
-              new IconButton(
-                  icon: new Icon(
-                    Icons.chat,
-                    color: Colors.white,
+          Center(
+            child: new Stack(
+              alignment: Alignment.topLeft,
+              children: <Widget>[
+                new IconButton(
+                    icon: new Icon(
+                      Icons.chat,
+                      color: Colors.white,
+                    ),
+                    onPressed: () {
+                      Navigator.of(context).push(new CupertinoPageRoute(
+                          builder: (BuildContext context) {
+                        return new MyMessages();
+                      }));
+                    }),
+                new CircleAvatar(
+                  radius: 8.0,
+                  backgroundColor: Colors.redAccent,
+                  child: new Text(
+                    "0",
+                    style: new TextStyle(color: Colors.white, fontSize: 12.0),
                   ),
-                  onPressed: () {
-                    Navigator.of(context).push(
-                        new CupertinoPageRoute(builder: (BuildContext context) {
-                      return new MyMessages();
-                    }));
-                  }),
-              new CircleAvatar(
-                radius: 8.0,
-                backgroundColor: Colors.redAccent,
-                child: new Text(
-                  "0",
-                  style: new TextStyle(color: Colors.white, fontSize: 12.0),
-                ),
-              )
-            ],
+                )
+              ],
+            ),
           )
         ],
       ),

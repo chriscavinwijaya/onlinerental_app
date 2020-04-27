@@ -15,7 +15,7 @@ class _AboutState extends State<About> {
       appBar: AppBar(
         title: Text('About'),
         centerTitle: true,
-        backgroundColor: Colors.blue,
+        backgroundColor: Colors.greenAccent,
       ),
       body: Column(
         children: <Widget>[
@@ -23,7 +23,7 @@ class _AboutState extends State<About> {
           Divider(),
           Flexible(
             child: Text(
-                '"FashHits" is an Online rental app which was built by the team of Developer Student Club of Management Development Institute of Singapore. The reason of making this application is to provide all of the community needs in fashions by providing short term rent. Feedbacks are appreciated as it would encourage us to improve our application.'),
+                '"Sustainable Fashion" is an Online rental app which was built by the team of Developer Student Club of Management Development Institute of Singapore. The reason of making this application is to provide all of the community needs in fashions by providing short term rent. Feedbacks are appreciated as it would encourage us to improve our application.'),
           ),
           SizedBox(
             height: 5,
@@ -33,10 +33,10 @@ class _AboutState extends State<About> {
               _launchURL1();
             },
             child: ListTile(
-              title: Text('for more information you can concact'),
+              title: Text('for more information you can contact'),
               leading: Icon(
                 Icons.link,
-                color: Colors.blue,
+                color: Colors.greenAccent,
               ),
             ),
           ),

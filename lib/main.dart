@@ -13,9 +13,15 @@ class MyApp extends StatelessWidget {
     return StreamProvider<User>.value(
       value: AuthService().user,
       child: MaterialApp(
-          // This widget is the root of your application.
-          debugShowCheckedModeBanner: false,
-          home: Wrapper()),
+        // This widget is the root of your application.
+        debugShowCheckedModeBanner: false,
+        home: Wrapper(),
+//    Theme
+//        theme: ThemeData(
+//          primaryColor: Colors.greenAccent,
+//          accentColor: Colors.cyanAccent,
+//        ),
+      ),
     );
   }
 }

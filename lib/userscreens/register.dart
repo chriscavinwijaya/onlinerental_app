@@ -24,25 +24,6 @@ class _RegisterState extends State<Register> {
 
   @override
   Widget build(BuildContext context) {
-//    Widget imageCarousel = Container(
-//      child: Carousel(
-//        boxFit: BoxFit.fitHeight,
-//
-//        images: [
-//          NetworkImage('images/Formalmenclothes.png'),
-//          AssetImage('images/blackdress.jpg'),
-//        ],
-//        autoplay: true,
-//        animationCurve: Curves.fastOutSlowIn,
-//        animationDuration: Duration(microseconds: 2000),
-//        dotSize: 3.0,
-//        indicatorBgPadding: 4.0,
-////        dotBgColor: Colors.tealAccent,
-//      ),
-//      height: 150,
-//      width: double.infinity,
-//    );
-
     return loading
         ? Loading()
         : Scaffold(
@@ -82,25 +63,22 @@ class _RegisterState extends State<Register> {
                       child: Column(
                         children: <Widget>[
                           Container(
-                            height: 50,
+                            height: 60,
                           ),
 
-//                          Container(
-//                            child: Center(
-//                                child: Text(
-//                              'FasHits Online Rental',
-//                              style: TextStyle(
-//                                  fontWeight: FontWeight.bold,
-//                                  fontSize: 40,
-//                                  fontFamily: 'SF UI Display',
-//                                  color: Colors.blue),
-//                            )),
-//                          ),
+                          Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Image.asset(
+                              'images/SF_Logo.png',
+                              height: 180,
+                            ),
+                          ),
 
                           Container(
-                            height: 5.0,
+                            height: 10,
                           ),
-//                          imageCarousel,
+
+                          //Email
                           SizedBox(height: 20),
                           TextFormField(
                             decoration:

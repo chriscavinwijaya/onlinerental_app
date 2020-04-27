@@ -10,12 +10,12 @@ class _MyNotificationsState extends State<MyNotifications> {
   Widget build(BuildContext context) {
     return new Scaffold(
         appBar: new AppBar(
+          backgroundColor: Colors.greenAccent,
           title: new Text("My Notifications"),
           centerTitle: false,
         ),
         body: new Center(
           child: new Text("My Notifications"),
-        )
-    );
+        ));
   }
 }

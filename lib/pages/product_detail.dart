@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/cupertino.dart';
+import 'package:onlinerentalapp/userscreens/search.dart';
+import 'package:onlinerentalapp/userscreens/messages.dart';
 
 class ProductDetail extends StatefulWidget {
   final product_detail_name;
@@ -20,7 +23,7 @@ class _ProductDetailState extends State<ProductDetail> {
     return new Scaffold(
       appBar: new AppBar(
           backgroundColor: Colors.greenAccent,
-          title: new Text("Sf"),
+          title: new Text("Sustainable Fashion"),
           centerTitle: false,
           actions: <Widget>[
             new IconButton(
@@ -28,7 +31,12 @@ class _ProductDetailState extends State<ProductDetail> {
                   Icons.search,
                   color: Colors.white,
                 ),
-                onPressed: () {})
+                onPressed: () {
+                  Navigator.of(context).push(
+                      new CupertinoPageRoute(builder: (BuildContext context) {
+                    return new MySearch();
+                  }));
+                })
           ]),
       body: new ListView(
         children: <Widget>[
@@ -149,8 +157,13 @@ class _ProductDetailState extends State<ProductDetail> {
               Expanded(
                 child: MaterialButton(
                   height: 50,
-                  onPressed: () {},
-                  color: Colors.green,
+                  onPressed: () {
+                    Navigator.of(context).push(
+                        new CupertinoPageRoute(builder: (BuildContext context) {
+                      return new MyMessages();
+                    }));
+                  },
+                  color: Colors.greenAccent,
                   textColor: Colors.white,
                   child: new Text(
                     "Chat Now",

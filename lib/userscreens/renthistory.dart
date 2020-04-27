@@ -10,12 +10,12 @@ class _MyRentHistoryState extends State<MyRentHistory> {
   Widget build(BuildContext context) {
     return new Scaffold(
         appBar: new AppBar(
-          title: new Text( "My Rent History" ),
+          backgroundColor: Colors.greenAccent,
+          title: new Text("My Rent History"),
           centerTitle: false,
         ),
         body: new Center(
-          child: new Text( "My Rent History" ),
-        )
-    );
+          child: new Text("My Rent History"),
+        ));
   }
 }

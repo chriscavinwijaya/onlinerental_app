@@ -26,24 +26,13 @@ class _SignInState extends State<SignIn> {
 
   @override
   Widget build(BuildContext context) {
-//    //Carousel
-//    Widget imageCarousel = Container(
-//      child: Carousel(
-//        boxFit: BoxFit.fitHeight,
-//        images: [
-//          AssetImage('images/Formalmenclothes.png'),
-//          AssetImage('images/blackdress.jpg'),
-//        ],
-//        autoplay: true,
-//        animationCurve: Curves.fastOutSlowIn,
-//        animationDuration: Duration(microseconds: 2000),
-//        dotSize: 3.0,
-//        indicatorBgPadding: 4.0,
-////        dotBgColor: Colors.tealAccent,
-//      ),
-//      height: 150,
-//      width: double.infinity,
-//    );
+    Container(
+      child: Image(
+        image: NetworkImage('images/weedingdress.png'),
+      ),
+      height: 150,
+      width: double.infinity,
+    );
 
     return loading
         ? Loading()
@@ -87,25 +76,20 @@ class _SignInState extends State<SignIn> {
                       child: Column(
                         children: <Widget>[
                           Container(
-                            height: 50,
+                            height: 60,
                           ),
 
-//                          Container(
-//                            child: Center(
-//                                child: Text(
-//                              'FasHits Online Rental',
-//                              style: TextStyle(
-//                                  fontWeight: FontWeight.bold,
-//                                  fontSize: 40,
-//                                  fontFamily: 'SF UI Display',
-//                                  color: Colors.blue),
-//                            )),
-//                          ),
+                          Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Image.asset(
+                              'images/SF_Logo.png',
+                              height: 180,
+                            ),
+                          ),
 
                           Container(
-                            height: 5.0,
+                            height: 10,
                           ),
-//imageCarousel,
 
                           //Email
                           SizedBox(height: 20),

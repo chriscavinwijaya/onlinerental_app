@@ -13,17 +13,23 @@ class _MyMessagesState extends State<MyMessages> {
     return Scaffold(
       appBar: AppBar(
         elevation: 0.6,
-        backgroundColor: Colors.white,
+        backgroundColor: Colors.greenAccent,
         title: Text(
           'Messages',
           style: TextStyle(
-            color: Colors.black,
+            color: Colors.white,
           ),
         ),
         actions: <Widget>[
           FlatButton(
             onPressed: () {},
-            child: Text('Add Friends'),
+            child: Text(
+              'Add Friends',
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 16,
+              ),
+            ),
           )
         ],
       ),
@@ -54,8 +60,8 @@ class _MyMessagesState extends State<MyMessages> {
                             end: Alignment.bottomRight,
                             stops: [0.1, 1],
                             colors: [
-                              Colors.orangeAccent,
-                              Colors.orange,
+                              Colors.cyanAccent,
+                              Colors.greenAccent,
                             ],
                           ),
                           borderRadius: BorderRadius.circular(100),

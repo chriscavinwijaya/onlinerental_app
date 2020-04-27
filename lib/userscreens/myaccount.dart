@@ -10,12 +10,12 @@ class _MyAccountState extends State<MyAccount> {
   Widget build(BuildContext context) {
     return new Scaffold(
         appBar: new AppBar(
+          backgroundColor: Colors.greenAccent,
           title: new Text("My Account"),
           centerTitle: false,
         ),
         body: new Center(
           child: new Text("My Account"),
-        )
-    );
+        ));
   }
 }

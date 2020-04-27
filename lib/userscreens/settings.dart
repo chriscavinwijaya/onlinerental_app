@@ -10,12 +10,12 @@ class _MySettingsState extends State<MySettings> {
   Widget build(BuildContext context) {
     return new Scaffold(
         appBar: new AppBar(
+          backgroundColor: Colors.greenAccent,
           title: new Text("My Settings"),
           centerTitle: false,
         ),
         body: new Center(
           child: new Text("My Settings"),
-        )
-    );
+        ));
   }
 }
