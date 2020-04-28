@@ -1,45 +1,34 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'Auth.dart';
-import 'constant.dart';
-import 'loading.dart';
 import 'package:wave/config.dart';
 import 'package:wave/wave.dart';
+import '../../services/Auth.dart';
+import '../../shared/loading.dart';
+import '../../shared/constant.dart';
 
-class SignIn extends StatefulWidget {
+class Register extends StatefulWidget {
   final Function toggleView;
-  SignIn({this.toggleView});
+  Register({this.toggleView});
   @override
-  _SignInState createState() => _SignInState();
+  _RegisterState createState() => _RegisterState();
 }
 
-class _SignInState extends State<SignIn> {
+class _RegisterState extends State<Register> {
   final AuthService _auth = AuthService();
   final _formKey = GlobalKey<FormState>();
-  bool loading = false;
 
-  //text field state
+  bool loading = false;
   String email = "";
   String password = "";
   String error = "";
 
   @override
   Widget build(BuildContext context) {
-    Container(
-      child: Image(
-        image: NetworkImage('images/weedingdress.png'),
-      ),
-      height: 150,
-      width: double.infinity,
-    );
-
     return loading
         ? Loading()
         : Scaffold(
             backgroundColor: Colors.white,
             body: Stack(
               children: <Widget>[
-//Background Wave Container
                 Container(
                   height: 700,
                   child: RotatedBox(
@@ -64,8 +53,6 @@ class _SignInState extends State<SignIn> {
                     ),
                   ),
                 ),
-
-//Container
                 Container(
                   padding:
                       EdgeInsets.symmetric(vertical: 35.0, horizontal: 35.0),
@@ -101,8 +88,6 @@ class _SignInState extends State<SignIn> {
                               setState(() => email = val);
                             },
                           ),
-
-                          //Password
                           SizedBox(
                             height: 20,
                           ),
@@ -118,7 +103,7 @@ class _SignInState extends State<SignIn> {
                             },
                           ),
 
-                          // Sign In Button
+                          // Register Button
                           SizedBox(
                             height: 50,
                           ),
@@ -130,12 +115,12 @@ class _SignInState extends State<SignIn> {
                               ),
                               splashColor: Colors.cyanAccent,
                               animationDuration: Duration(seconds: 4),
-                              color: Colors.greenAccent,
+                              color: Colors.white,
                               child: ListTile(
                                 title: Text(
-                                  "Sign In",
+                                  "Register",
                                   style: TextStyle(
-                                      color: Colors.white,
+                                      color: Colors.greenAccent,
                                       fontSize: 25,
                                       fontFamily: 'Pacifico'),
                                 ),
@@ -145,26 +130,23 @@ class _SignInState extends State<SignIn> {
                                 if (_formKey.currentState.validate()) {
                                   setState(() => loading = true);
                                   dynamic result =
-                                      await _auth.signInWithEmailAndPassword(
+                                      await _auth.registerWithEmailAndPassword(
                                           email, password);
                                   if (result == null) {
                                     setState(
                                       () {
                                         error =
-                                            'Unable to sign in with those credentials';
+                                            'Could not Register with those credentials';
                                         loading = false;
                                       },
                                     );
-                                  } else {
-                                    print('Signed In');
-                                    print(result);
                                   }
                                 }
                               },
                             ),
                           ),
 
-                          // Register Button
+                          // Sign In Button
                           SizedBox(
                             height: 25,
                           ),
@@ -176,12 +158,12 @@ class _SignInState extends State<SignIn> {
                               ),
                               splashColor: Colors.tealAccent,
                               animationDuration: Duration(seconds: 4),
-                              color: Colors.white,
+                              color: Colors.greenAccent,
                               child: ListTile(
                                 title: Text(
-                                  "Register Here",
+                                  "Sign In Here",
                                   style: TextStyle(
-                                      color: Colors.greenAccent,
+                                      color: Colors.white,
                                       fontSize: 25,
                                       fontFamily: 'Pacifico'),
                                 ),

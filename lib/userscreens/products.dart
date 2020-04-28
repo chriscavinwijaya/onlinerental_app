@@ -82,33 +82,34 @@ class Single_prod extends StatelessWidget {
                         product_detail_picture: prod_picture,
                       ))),
               child: GridTile(
-                  footer: Container(
-                    color: Colors.white,
-                    child: ListTile(
-                      leading: Text(
-                        prod_name,
-                        textAlign: TextAlign.center,
-                        style: TextStyle(
-                            fontSize: 16.0, fontWeight: FontWeight.bold),
-                      ),
-                      title: Text(
-                        "\$$prod_price",
-                        textAlign: TextAlign.center,
-                        style: TextStyle(
-                            fontSize: 14.0, fontWeight: FontWeight.bold),
-                      ),
-
-                      //      subtitle:Text(
-                      //        "/day",
-                      //    style: TextStyle(fontWeight: FontWeight.bold,
-                      //      ),
-                      //    ),
+                footer: Container(
+                  color: Colors.white,
+                  child: ListTile(
+                    leading: Text(
+                      prod_name,
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                          fontSize: 16.0, fontWeight: FontWeight.bold),
                     ),
+                    title: Text(
+                      "\$$prod_price",
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                          fontSize: 14.0, fontWeight: FontWeight.bold),
+                    ),
+
+                    //      subtitle:Text(
+                    //        "/day",
+                    //    style: TextStyle(fontWeight: FontWeight.bold,
+                    //      ),
+                    //    ),
                   ),
-                  child: Image.asset(
-                    prod_picture,
-                    fit: BoxFit.cover,
-                  )),
+                ),
+                child: Image.asset(
+                  prod_picture,
+                  fit: BoxFit.cover,
+                ),
+              ),
             ),
           )),
     );

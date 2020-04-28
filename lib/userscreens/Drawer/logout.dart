@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'Auth.dart';
+import '../../services/Auth.dart';
 
 class Mylogout extends StatefulWidget {
   @override

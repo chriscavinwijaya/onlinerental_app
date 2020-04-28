@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:SustainableFashion/userscreens/MyHomePage.dart';
+import 'package:SustainableFashion/userscreens/Home/MyHomePage.dart';
 import 'package:provider/provider.dart';
-import 'Authenticate.dart';
-import 'user.dart';
+import 'authenticate/Authenticate.dart';
+import '../models/user.dart';
 
 //returns either HomePage or Authenticate
 

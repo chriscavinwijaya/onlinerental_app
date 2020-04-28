@@ -1,6 +1,6 @@
-import 'custom_heading.dart';
+import '../Messaging/custom_heading.dart';
 import 'package:flutter/material.dart';
-import 'chat_detail.dart';
+import '../Messaging/chat_detail.dart';
 
 class MyMessages extends StatefulWidget {
   @override

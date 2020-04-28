@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:SustainableFashion/userscreens/search.dart';
-import 'package:SustainableFashion/userscreens/messages.dart';
+import 'package:SustainableFashion/userscreens/Home/search.dart';
+import 'package:SustainableFashion/userscreens/Home/messages.dart';
 
 class ProductDetail extends StatefulWidget {
   final product_detail_name;

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:SustainableFashion/userscreens/Auth.dart';
+import 'package:SustainableFashion/services/Auth.dart';
 import 'package:SustainableFashion/userscreens/wrapper.dart';
 import 'package:provider/provider.dart';
-import 'package:SustainableFashion/userscreens/user.dart';
+import 'package:SustainableFashion/models/user.dart';
 
 void main() => runApp(MyApp());
 

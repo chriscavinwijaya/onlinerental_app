@@ -1,18 +1,18 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:SustainableFashion/userscreens/Auth.dart';
+import 'package:SustainableFashion/services/Auth.dart';
 import 'search.dart';
 import 'messages.dart';
-import 'logout.dart';
-import 'renthistory.dart';
-import 'settings.dart';
-import 'about.dart';
-import 'notifications.dart';
-import 'myaccount.dart';
+import '../Drawer/logout.dart';
+import '../Drawer/renthistory.dart';
+import '../Drawer/settings.dart';
+import '../Drawer/about.dart';
+import '../Drawer/notifications.dart';
+import '../Drawer/myaccount.dart';
 import 'package:carousel_pro/carousel_pro.dart';
-import 'categories.dart';
-import 'products.dart';
+import '../categories.dart';
+import '../products.dart';
 import 'package:responsive_container/responsive_container.dart';
 
 class MyHomePage extends StatefulWidget {
