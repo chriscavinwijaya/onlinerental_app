@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:onlinerentalapp/pages/product_detail.dart';
+import 'package:SustainableFashion/pages/product_detail.dart';
 
 class Products extends StatefulWidget {
   @override

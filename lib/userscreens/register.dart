@@ -4,7 +4,6 @@ import 'package:wave/wave.dart';
 import 'Auth.dart';
 import 'loading.dart';
 import 'constant.dart';
-import 'package:carousel_pro/carousel_pro.dart';
 
 class Register extends StatefulWidget {
   final Function toggleView;

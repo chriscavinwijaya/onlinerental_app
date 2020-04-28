@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:onlinerentalapp/userscreens/Auth.dart';
-import 'package:onlinerentalapp/userscreens/MyHomePage.dart';
-import 'package:onlinerentalapp/userscreens/wrapper.dart';
+import 'package:SustainableFashion/userscreens/Auth.dart';
+import 'package:SustainableFashion/userscreens/wrapper.dart';
 import 'package:provider/provider.dart';
-import 'package:onlinerentalapp/userscreens/user.dart';
+import 'package:SustainableFashion/userscreens/user.dart';
 
 void main() => runApp(MyApp());
 

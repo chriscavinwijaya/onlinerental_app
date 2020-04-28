@@ -5,7 +5,6 @@ import 'constant.dart';
 import 'loading.dart';
 import 'package:wave/config.dart';
 import 'package:wave/wave.dart';
-import 'package:carousel_pro/carousel_pro.dart';
 
 class SignIn extends StatefulWidget {
   final Function toggleView;

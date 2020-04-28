@@ -1,10 +1,10 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:onlinerentalapp/userscreens/Auth.dart';
+import 'package:SustainableFashion/userscreens/Auth.dart';
 import 'search.dart';
 import 'messages.dart';
-import 'login.dart';
+import 'logout.dart';
 import 'renthistory.dart';
 import 'settings.dart';
 import 'about.dart';
@@ -13,6 +13,7 @@ import 'myaccount.dart';
 import 'package:carousel_pro/carousel_pro.dart';
 import 'categories.dart';
 import 'products.dart';
+import 'package:responsive_container/responsive_container.dart';
 
 class MyHomePage extends StatefulWidget {
   @override
@@ -48,8 +49,8 @@ class _MyHomePageState extends State<MyHomePage> {
           AssetImage('images/stageclothespose.jpg'),
         ],
         autoplay: true,
-//      animationCurve: Curves.fastOutSlowIn,
-//      animationDuration: Duration(milliseconds: 1000),
+        animationCurve: Curves.fastOutSlowIn,
+        animationDuration: Duration(milliseconds: 1000),
         dotSize: 4.0,
         indicatorBgPadding: 2.0,
         dotBgColor: Colors.white30,
@@ -61,6 +62,7 @@ class _MyHomePageState extends State<MyHomePage> {
         title: new Text("Sustainable Fashion"),
         centerTitle: false,
         actions: <Widget>[
+          //Search Button
           new IconButton(
               icon: new Icon(
                 Icons.search,
@@ -72,6 +74,8 @@ class _MyHomePageState extends State<MyHomePage> {
                   return new MySearch();
                 }));
               }),
+
+          //Message Button
           Center(
             child: new Stack(
               alignment: Alignment.topLeft,
@@ -100,6 +104,8 @@ class _MyHomePageState extends State<MyHomePage> {
           )
         ],
       ),
+
+      //Categories
       body: SingleChildScrollView(
         child: new Column(
           children: <Widget>[
@@ -115,6 +121,8 @@ class _MyHomePageState extends State<MyHomePage> {
                   )),
             ),
             Categories(),
+
+            //Recent Products
             new Padding(
               padding: const EdgeInsets.all(6.0),
               child: Container(
@@ -126,8 +134,9 @@ class _MyHomePageState extends State<MyHomePage> {
                 ),
               ),
             ),
-            Container(
-              height: 320.0,
+            ResponsiveContainer(
+              heightPercent: 100,
+              widthPercent: 100,
               child: Products(),
             )
           ],
@@ -135,18 +144,6 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
 
       // Floating Camera Button
-
-//      floatingActionButton: new Stack(
-//        children: <Widget>[
-//          new FloatingActionButton(
-//            onPressed: null,
-//            child: Center (
-//             child: new Icon( Icons.add_a_photo),
-//            ),
-//          ),
-//        ],
-//      ),
-
       floatingActionButton: FloatingActionButton(
         child: Icon(Icons.add_a_photo),
         onPressed: null,
@@ -254,10 +251,10 @@ class _MyHomePageState extends State<MyHomePage> {
                   size: 20,
                 ),
               ),
-              title: new Text("login"),
+              title: new Text("Logout"),
               onTap: () {
                 Navigator.of(context).push(new CupertinoPageRoute(
-                    builder: (BuildContext context) => new Mylogin()));
+                    builder: (BuildContext context) => new Mylogout()));
               },
             ),
           ],
