@@ -1,5 +1,5 @@
 import 'package:SustainableFashion/models/user.dart';
-import 'package:SustainableFashion/models/brew.dart';
+import 'package:SustainableFashion/models/UserDetails.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 class DatabaseService {
@@ -8,24 +8,22 @@ class DatabaseService {
   DatabaseService({ this.uid });
 
   // collection reference
-  final CollectionReference brewCollection = Firestore.instance.collection('brews');
+  final CollectionReference UserDetailsCollection = Firestore.instance.collection('UserDetails');
 
-  Future<void> updateUserData(String sugars, String name, int strength) async {
-    return await brewCollection.document(uid).setData({
-      'sugars': sugars,
+  Future<void> updateUserData(String name, String email) async {
+    return await UserDetailsCollection.document(uid).setData({
       'name': name,
-      'strength': strength,
+      'email': email,
     });
   }
 
-  // brew list from snapshot
-  List<Brew> _brewListFromSnapshot(QuerySnapshot snapshot) {
+  // user details list from snapshot
+  List<UserDetails> _UserDetailsListFromSnapshot(QuerySnapshot snapshot) {
     return snapshot.documents.map((doc){
       //print(doc.data);
-      return Brew(
+      return UserDetails(
           name: doc.data['name'] ?? '',
-          strength: doc.data['strength'] ?? 0,
-          sugars: doc.data['sugars'] ?? '0'
+          email: doc.data['email'] ?? '0'
       );
     }).toList();
   }
@@ -35,20 +33,19 @@ class DatabaseService {
     return UserData(
         uid: uid,
         name: snapshot.data['name'],
-        sugars: snapshot.data['sugars'],
-        strength: snapshot.data['strength']
+        email: snapshot.data['email'],
     );
   }
 
-  // get brews stream
-  Stream<List<Brew>> get brews {
-    return brewCollection.snapshots()
-        .map(_brewListFromSnapshot);
+  // get user details stream
+  Stream<List<UserDetails>> get UserDetails {
+    return UserDetailsCollection.snapshots()
+        .map(_UserDetailsListFromSnapshot);
   }
 
   // get user doc stream
   Stream<UserData> get userData {
-    return brewCollection.document(uid).snapshots()
+    return UserDetailsCollection.document(uid).snapshots()
         .map(_userDataFromSnapshot);
   }
 
