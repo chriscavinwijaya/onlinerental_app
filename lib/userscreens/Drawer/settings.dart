@@ -1,4 +1,9 @@
+import 'package:SustainableFashion/models/user.dart';
+import 'package:SustainableFashion/services/Database.dart';
+import 'constant.dart';
+import 'loading.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class MySettings extends StatefulWidget {
   @override
@@ -6,16 +11,86 @@ class MySettings extends StatefulWidget {
 }
 
 class _MySettingsState extends State<MySettings> {
+
+  final _formKey = GlobalKey<FormState>();
+  final List<String> sugars = ['0', '1', '2', '3', '4'];
+  final List<int> strengths = [100, 200, 300, 400, 500, 600, 700, 800, 900];
+
+  // form values
+  String _currentName;
+  String _currentSugars;
+  int _currentStrength;
+
   @override
   Widget build(BuildContext context) {
-    return new Scaffold(
-        appBar: new AppBar(
-          backgroundColor: Colors.greenAccent,
-          title: new Text("My Settings"),
-          centerTitle: false,
-        ),
-        body: new Center(
-          child: new Text("My Settings"),
-        ));
+
+    User user = Provider.of<User>(context);
+
+    return StreamBuilder<UserData>(
+        stream: DatabaseService(uid: user.uid).userData,
+        builder: (context, snapshot) {
+          if(snapshot.hasData){
+            UserData userData = snapshot.data;
+            return Form(
+              key: _formKey,
+              child: Column(
+                children: <Widget>[
+                  Text(
+                    'Update Settings.',
+                    style: TextStyle(fontSize: 20.0),
+                  ),
+                  SizedBox(height: 25.0),
+                  TextFormField(
+                    initialValue: userData.name,
+                    decoration: textInputDecoration,
+                    validator: (val) => val.isEmpty ? 'Enter Your Name' : null,
+                    onChanged: (val) => setState(() => _currentName = val),
+                  ),
+                  SizedBox(height: 15.0),
+                  DropdownButtonFormField(
+                    value: _currentSugars ?? userData.sugars,
+                    decoration: textInputDecoration,
+                    items: sugars.map((sugar) {
+                      return DropdownMenuItem(
+                        value: sugar,
+                        child: Text('test'),
+                      );
+                    }).toList(),
+                    onChanged: (val) => setState(() => _currentSugars = val ),
+                  ),
+                  SizedBox(height: 15.0),
+                  Slider(
+                    value: (_currentStrength ?? userData.strength).toDouble(),
+                    activeColor: Colors.brown[_currentStrength ?? userData.strength],
+                    inactiveColor: Colors.brown[_currentStrength ?? userData.strength],
+                    min: 100.0,
+                    max: 900.0,
+                    divisions: 8,
+                    onChanged: (val) => setState(() => _currentStrength = val.round()),
+                  ),
+                  RaisedButton(
+                      color: Colors.pink[400],
+                      child: Text(
+                        'Update',
+                        style: TextStyle(color: Colors.white),
+                      ),
+                      onPressed: () async {
+                        if(_formKey.currentState.validate()){
+                          await DatabaseService(uid: user.uid).updateUserData(
+                              _currentSugars ?? snapshot.data.sugars,
+                              _currentName ?? snapshot.data.name,
+                              _currentStrength ?? snapshot.data.strength
+                          );
+                          Navigator.pop(context);
+                        }
+                      }
+                  ),
+                ],
+              ),
+            );
+          } else {
+            return Loading();
+          }
+        }
+    );
   }
-}
